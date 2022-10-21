@@ -11,9 +11,11 @@ require 'includes/form_handlers/login_handler.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=r">
+    <link rel="stylesheet" type="text/css" href="assets/css/register.css">
     <title>Register Page</title>
 </head>
 <body>
+<div class="wrapper">
     <form action="register.php" method="POST">
         <input type="email" name="log_email" placeholder="Enter Your Email Address" value="<?php 
         if (isset($_SESSION['log_email'])) {
@@ -78,7 +80,8 @@ require 'includes/form_handlers/login_handler.php';
         <input type="submit" name="reg_btn" value="Register">
         <br>
         <?php if(in_array("<span style='color: #14C800;'>Account Created Successfully</span><br>",$err_array)){echo "<span style='color: #14C800;'>Account Created Successfully</span><br>";}?>
-    </form>
+    </form> 
+</div>
 </body>
 
 </html>
