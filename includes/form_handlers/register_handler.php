@@ -80,6 +80,7 @@ if (isset($_POST['reg_btn'])) {
         // check if username exists
         $checkuser_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
         $i = 0;
+        // $result = mysqli_result($checkuser_query);
         //if username exists add number to it
         while (mysqli_num_rows($checkuser_query) != 0) {
             $i++;
@@ -87,12 +88,16 @@ if (isset($_POST['reg_btn'])) {
             $checkuser_query = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
         }
         // profile picture 
-        $rand = rand(1, 2); //random number btwn 1 and 16
+        $rand = rand(1, 3); //random number btwn 1 and 16
         if ($rand == 1) {
-            $profile_pic = "assets/images/profile_pics/defaults/head_belize_hole.png";
+            $profile_pic = "assets/images/profile_pics/defaults/p1.png";
         } else if ($rand == 2) {
-            $profile_pic = "assets/images/profile_pics/defaults/head_carrot.png";
+            $profile_pic = "assets/images/profile_pics/defaults/p2.png";
         }
+        else if ($rand == 3) {
+            $profile_pic = "assets/images/profile_pics/defaults/p3.png";
+        }
+
 
         $query = mysqli_query($con, "INSERT INTO users VALUES('','$fname','$lname','$username','$eml','$password','$date','$profile_pic','0','0','no',',')");
         array_push($err_array, "<span style='color: #14C800;'>Account Created Successfully</span><br>");
