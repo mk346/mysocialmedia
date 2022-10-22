@@ -20,7 +20,7 @@ if(isset($_POST['log_btn'])) {
         exit();
     }
     else {
-        array_push($err_array, "Email or Password was Incorrect<br>");
+        array_push($err_array, "<span style='color: red;'>Email or Password was Incorrect</span><br>");
     }
 
 

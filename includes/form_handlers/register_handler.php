@@ -47,30 +47,30 @@ if (isset($_POST['reg_btn'])) {
             // count the number of rows returned
             $num_rows = mysqli_num_rows($e_check);
             if ($num_rows > 0) {
-                array_push($err_array, "Email already exists<br>");
+                array_push($err_array, "<span style='color: red;'>Email already exists</span><br>");
             }
         } else {
-            array_push($err_array, "Invalid Email Format<br>");
+            array_push($err_array, "<span style='color: red;'>Invalid Email Format</span><br>");
         }
     } else {
-        array_push($err_array, "Emails dont Match<br>");
+        array_push($err_array, "<span style='color: red;'>Emails dont Match</span><br>");
     }
 
     if (strlen($fname) > 25 || strlen($fname) < 2) {
-        array_push($err_array, "Your first name must between 2 and 25 characters<br>");
+        array_push($err_array, "<span style='color: red;'>Your first name must between 2 and 25 characters</span><br>");
     }
     if (strlen($lname) > 25 || strlen($lname) < 2) {
-        array_push($err_array, "Your last name must between 2 and 25 characters<br>");
+        array_push($err_array, "<span style='color: red;'>Your last name must between 2 and 25 characters</span><br>");
     }
     if ($password != $password2) {
-        array_push($err_array, "Your Passwords do not Match<br>");
+        array_push($err_array, "<span style='color: red;'>Your Passwords do not Match</span><br>");
     } else {
         if (preg_match('/[^A-Za-z0-9]/', $password)) {
-            array_push($err_array, "Password Can only contain characters or numbers<br>");
+            array_push($err_array, "<span style='color: red;'>Password Can only contain characters or numbers</span><br>");
         }
     }
     if (strlen($password) > 32 || strlen($password) < 8) {
-        array_push($err_array, "Password must be between 8 and 32 characters<br>");
+        array_push($err_array, "<span style='color: red;'>Password must be between 8 and 32 characters</span><br>");
     }
 
     if (empty($err_array)) {
