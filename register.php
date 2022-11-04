@@ -38,10 +38,10 @@ require 'includes/form_handlers/login_handler.php';
             <div id="first">
                 <form action="register.php" method="POST">
                     <input type="email" name="log_email" placeholder="Enter Your Email Address" value="<?php
-                                                                                                        if (isset($_SESSION['log_email'])) {
-                                                                                                            echo $_SESSION['log_email'];
-                                                                                                        }
-                                                                                                        ?>" required>
+                    if (isset($_SESSION['log_email'])) {
+                        echo $_SESSION['log_email'];
+                    }
+                    ?>" required>
                     <br>
                     <input type="password" name="log_password" placeholder="Enter Your Password">
                     <br>
@@ -54,9 +54,9 @@ require 'includes/form_handlers/login_handler.php';
             <div id="second">
                 <form action="register.php" method="POST">
                     <input type="text" name="reg_fname" placeholder="First Name" value="<?php
-                                                                                        if (isset($_SESSION['reg_fname'])) {
-                                                                                            echo $_SESSION['reg_fname'];
-                                                                                        } ?>" required>
+                    if (isset($_SESSION['reg_fname'])) {
+                        echo $_SESSION['reg_fname'];
+                    } ?>" required>
                     <br>
                     <?php if (in_array("<span style='color: red;'>Your first name must between 2 and 25 characters</span><br>", $err_array)) {
                         echo "<span style='color: red;'>Your first name must between 2 and 25 characters</span><br>";

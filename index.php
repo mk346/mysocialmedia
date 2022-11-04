@@ -15,6 +15,15 @@ include("includes/header.php");
         echo "Likes: " . $user['num_likes'];
         ?>
     </div>
+</div>
+<div class="main_column column">
+    <form action="post_form" method="POST" class="post_form">
+        <textarea name="post_text" id="post_text" placeholder="Got something to say?"></textarea>
+        <input type="submit" name="post" id="post_button" value ="Post"> 
+        <hr>
+
+
+    </form>
 
 </div>
 </div>
